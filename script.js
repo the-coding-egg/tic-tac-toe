@@ -1,4 +1,4 @@
-function createGameboard() {
+const gameboard = (function () {
   let board = [];
   return {
     createBoard() {
@@ -8,16 +8,12 @@ function createGameboard() {
           board[i].push(j);
         }
       }
-    },
-    getBoard() {
       return board;
     },
   };
-}
+})();
 
-const newGame = createGameboard();
-newGame.createBoard();
-console.log(newGame.getBoard());
+console.log(gameboard.createBoard());
 
 function playerOne() {}
 
