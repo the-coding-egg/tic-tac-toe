@@ -1,17 +1,23 @@
-function Gameboard() {
-  const row = 3;
-  const column = 3;
-  const board = [];
-  for (let i = 0; i < row; i++) {
-    board[i] = [];
-    for (let j = 0; j < column; j++) {
-      board[i].push(j);
-    }
-  }
-  return board;
+function createGameboard() {
+  let board = [];
+  return {
+    createBoard() {
+      for (let i = 0; i < 3; i++) {
+        board[i] = [];
+        for (let j = 0; j < 3; j++) {
+          board[i].push(j);
+        }
+      }
+    },
+    getBoard() {
+      return board;
+    },
+  };
 }
 
-console.log(Gameboard());
+const newGame = createGameboard();
+newGame.createBoard();
+console.log(newGame.getBoard());
 
 function playerOne() {}
 
